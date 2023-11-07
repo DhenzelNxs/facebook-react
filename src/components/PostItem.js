@@ -1,44 +1,42 @@
-import React from "react";
+import React from 'react';
 
-function HeaderPost({ autor, data }){
-    return(
-        <div className="post-header">
-            <img className="avatar" src={autor.avatar}></img>
-            <div className="details">
-                <span>{autor.name}</span>
-                <span>{data}</span>
-            </div>
-        </div>
-    )
-}
-
-
-function CommentsPosts({ comentarios }){
-    return(
-        <div className="post-comments">
-            <div className="divider"/>
-            {comentarios.map(comment => (
-                <div key={comment.id} className="comment">
-                    <img className="avatar" src={comment.autor.avatar}/>
-                    <p>
-                        <span>{comment.autor.name}</span>
-                        {comment.conteudo}
-                    </p>
-
-                </div>
-            ))}
-
-        </div>
-    )
-}
-
-function ItemPost({ autor, data, conteudo, comentarios}){
-    <div className="post">
-        <HeaderPost autor={autor} data={data}></HeaderPost>
-        <p className="post-content">{conteudo}</p>
-        <CommentsPosts comentarios={comentarios}></CommentsPosts>
+function PostHeader({ author, date }) {
+  return (
+    <div className="post-header">
+      <img className="avatar" src={author.avatar} />
+      <div className="details">
+        <span>{author.name}</span>
+        <span>{date}</span>
+      </div>
     </div>
-
+  );
 }
 
-export default ItemPost
+function PostComments({ comments }) {
+  return (
+    <div className="post-comments">
+      <div className="divider" />
+      {comments.map(comment => (
+        <div key={comment.id} className="comment">
+          <img className="avatar" src={comment.author.avatar} />
+          <p>
+            <span>{comment.author.name}</span>
+            {comment.content}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PostItem({ author, date, content, comments }) {
+  return (
+    <div className="post">
+      <PostHeader author={author} date={date} />
+      <p className="post-content">{content}</p>
+      <PostComments comments={comments} />
+    </div>
+  );
+}
+
+export default PostItem;
