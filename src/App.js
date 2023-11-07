@@ -10,7 +10,11 @@ function App() {
         <Header></Header>
       </div>
       <div>
+
         <PostList></PostList>
+
+        <PostList/>        
+
       </div>
     </div>
   );
