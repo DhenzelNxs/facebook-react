@@ -4,7 +4,7 @@ function Header() {
   return (
     <header>
       <nav>
-        <img src="https://i.imgur.com/KDIDiSE.png" />
+        <img src="https://i.imgur.com/KDIDiSE.png" alt="Icon"/>
         <div>
           <span>Meu perfil</span>
           <i className="material-icons">account_circle</i>
