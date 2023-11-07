@@ -24,7 +24,6 @@ class PostList extends Component {
             content: "Deu não",
           },
         ],
-        
       },
     ],
   };
